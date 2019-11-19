@@ -14,22 +14,24 @@ body{
     background-color: #FDFBF4;
 }
 blockquote{
-    font-size: 2.5em;
+    font-size: 3em;
     color:#FBB209;
     text-align: center;
     margin-top: 60px;
 }
 blockquote:before {
+    font-family: sans-serif;
     content: open-quote;
     display: inline;
     line-height: 0;
-    left: -10px;
+    left: -32px;
     position: relative;
     top: 5px;
     color: #FBB209;
     font-size: 2.5em;
   }
 blockquote:after {
+    font-family: sans-serif;
     content: close-quote;
     display: block;
     line-height: 1;
@@ -50,6 +52,8 @@ blockquote:after {
     background: #008791;
     color: #FDFBF4;
     border-color: #008791;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
     border-radius: 20px;
     padding: 5px 25px;
     margin-bottom: 1em; 
@@ -90,7 +94,7 @@ h2{
     font-size: 2em;
 }
 .container{
-    padding:35px;
+    padding:50px;
     max-width: 1900px;
 }
 #contact-form .container {
@@ -104,6 +108,8 @@ h2{
     background-color: #008791 !important;
 }
 .navbar{
+    -webkit-border-radius:0 0 50px 50px;
+    -moz-border-radius:0 0 50px 50px;
     border-radius: 0 0 50px 50px;
 }
 a.nav-link {
@@ -124,6 +130,8 @@ ul.navbar-nav > li {
     border: solid 1px #008791;
     color:#FDFBF4;
     background-color:#01D0D4;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
     border-radius: 20px;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -136,8 +144,7 @@ ul.navbar-nav > li {
 #hero{
     position: relative;
     min-height: 100%;
-    background: #FDFBF4 url("../../assets/img/hero-section-image-circles.png") bottom left no-repeat;
-    background-position: 5%;
+    background: #FDFBF4 url("../../assets/img/home-page-hero.png") bottom left no-repeat;
     background-size: contain;
     display: flex;
     align-items: center;
@@ -146,6 +153,7 @@ ul.navbar-nav > li {
 }
 #hero h1{
     font-weight: 700;
+    font-size: 4em;
 }
 /* FOOTER */
 #footer h4{
@@ -154,11 +162,17 @@ ul.navbar-nav > li {
 #footer li{
     font-size:25px;
 }
+#footer li:hover {
+    color: #FBB209;
+    cursor: pointer;
+}
 .form-group {
     padding-right: 20px;
 }
 input#Email{
     border: solid 2px #0E474D;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
     border-radius: 14px;
 }
 /* li Bullet points */
@@ -178,8 +192,7 @@ input#Email{
     position: absolute;
     background-image: url('../../assets/img/bullet-paws.png');
     background-size: cover;
-    background-position: center; 
-      
+    background-position: center;    
 } 
 /* COPY RIGHT */
 #copyright{
@@ -199,7 +212,7 @@ input#Email{
 }
 .socials{
     position: absolute;
-    right:20px;
+    right:40px;
     font-size: 25px;
     top:30%;
     padding-bottom: 25px;
@@ -225,10 +238,32 @@ input#Email{
 #book .b-info{
     padding: 0;
 }
+#book .b-info h5{
+    display: inline;
+    color: #FBB209;
+    font-weight: 700;
+    font-size: 1em;
+}
+#book .awards{
+    padding-left: 0;
+    margin-top: 0;
+}
 .book-cover{
     display: flex;
     flex-direction: column;
     align-self: center;
+}
+#archive .row{
+    margin-top: 2em;
+}
+.awards{
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+}
+.awards li{
+    line-height: 1.7;
 }
 .awards i{
     color: #FBB209;
@@ -244,6 +279,8 @@ input#Email{
     width: 100%;
     height: 100%;
     background: #008791;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -256,13 +293,20 @@ input#Email{
 .circle span img{
     width:70%;
     border: solid 7px #fff;
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
     border-radius: 30px;
 }
 .sb-pics img{
     border: 15px solid #FBB209;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
     border-radius: 50%;
     margin-bottom: 1em;
     z-index: 10;
+}
+.book-img-2{
+    border-color: #01D0D4 !important;
 }
 .sb-pics .book-img-1{
     width: 75%;
@@ -338,6 +382,17 @@ input#Email{
 .card{
     margin-bottom: 3em;
 }
+.sidebar-txt{
+    padding-top: 40px;
+}
+.joinus-blog{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.joinus-blog *{
+    font-weight: 700;
+}
 /* search */
 .search-form input{
     width: 80%;
@@ -350,17 +405,29 @@ input#Email{
     color: #FDFBF4;
     border: 1px solid #FBB209;
 }
+.search-form ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff !important;
+    opacity: 1; /* Firefox */
+}
+.search-form :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #a5a5a5 !important;  
+}
+  
+.search-form ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #a5a5a5 !important;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #cccccc !important;
+    color: #a5a5a5 !important;
     opacity: 1; /* Firefox */
 }
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #cccccc !important;  
+    color: #a5a5a5 !important;  
 }
   
 ::-ms-input-placeholder { /* Microsoft Edge */
-    color: #cccccc !important;
+    color: #a5a5a5 !important;
 }
 .search-form button{
    background-color: #FBB209;
@@ -383,6 +450,8 @@ input#Email{
     width: 90%;
     max-width: 500px;
     text-align: center;
+    -webkit-border-radius:40px;
+    -moz-border-radius:40px;
     border-radius: 40px;
     height: 65px;
 }
@@ -398,6 +467,8 @@ input#Email{
 /* SINGLE BLOG */
 .blog-area{
     background-color: #fff;
+    -webkit-border-radius:40px;
+    -moz-border-radius:40px;
     border-radius: 40px;
     padding:    35px;
 }
@@ -409,6 +480,8 @@ input#Email{
     width: 90%;
     max-width: 500px;
     text-align: center;
+    -webkit-border-radius:40px;
+    -moz-border-radius:40px;
     border-radius: 40px;
 }
 .s-blog-bread p {
@@ -431,6 +504,8 @@ input#Email{
     right: 0;
 }
 .sblog-img-top{
+    -webkit-border-radius:40px;
+    -moz-border-radius:40px;
     border-radius: 40px;
 }
 .ft-img{
@@ -444,6 +519,8 @@ input#Email{
     margin: 20px 0;
 }
 .blog-content img{
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
     border-radius: 30px;;
 }
 .devider-info{
@@ -461,20 +538,25 @@ color:#0E474D;
 .share-icons i{
    color: #FDFBF4;
    background: #008791;
+   -webkit-border-radius:50%;
+    -moz-border-radius:50%;
    border-radius: 50%;
    font-size: 28px;
    width:50px;
    height: 50px;
    line-height: 50px;
    margin: 0 20px;
+   border: 2px solid #008791;
 }
 .share-icons i:hover{
     color: #008791;
-    background: #FDFBF4;
+    background-color: #fff;
 }
 .comments textarea{
     width: 100%;
     max-width:100%;
+    -webkit-border-radius:40px;
+    -moz-border-radius:40px;
     border-radius: 40px;
     border: 2px solid #008791;
     padding: 10px;
@@ -483,7 +565,8 @@ color:#0E474D;
 #hero-contact{
     position: relative;
     min-height: 100%;
-    background: #FDFBF4 url("../../assets/img/hero-contact-page.gif") bottom left no-repeat;
+    background: #f7f4ed url("../../assets/img/contact-page.png") bottom left no-repeat;z    
+    background-position: 5%;
     background-size: contain;
     display: flex;
     align-items: center;
@@ -493,10 +576,16 @@ color:#0E474D;
 #hero-contact h1{
     font-weight: 700;
 }
+#hero-contact p:hover{
+    color: #FBB209;
+    cursor: pointer;
+}
 #hero-contact i{
     text-align: center;
     color: #FDFBF4;
     background: #008791;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
     border-radius: 50%;
     font-size: 28px;
     width:50px;
@@ -504,32 +593,23 @@ color:#0E474D;
     line-height: 50px;
     margin-right: 15px;
  }
- #hero-contact i:hover{
-     color: #008791;
-     background: #FDFBF4;
- }
  .align-wolf{
      display: flex;
      align-items: center;
  }
 #hero-contact input#Email {
     border: solid 2px #0E474D;
+    -webkit-border-radius:25px;
+    -moz-border-radius:25px;
     border-radius: 25px;
-}
-#hero-contact .form-group{
-    width: 60%;
-}
-#hero-contact input#Email {
-    width: 100%;
-}
-#hero-contact button.btn.btn-primary.mb-2 {
-    width: 20%;
 }
 /* CONTACT FORM */
 #contact-form textarea.form-control,
 select#HowDidYouFindUs,
 #contact-form input.form-control {
     border: solid 2px #0E474D;
+    -webkit-border-radius:25px;
+    -moz-border-radius:25px;
     border-radius: 25px;
 }
 #contact-form button.btn.btn-primary {
@@ -544,7 +624,12 @@ select#HowDidYouFindUs,
 }
 #contact-form label {
     color: #008791;
-    font-size: 2em;
+    font-size: 1.25em;
+}
+/* search outline */
+input#sidebar-search:focus {
+    outline:none;
+    
 }
 /* cusom check box */
 #contact-form .form-check label{
@@ -589,7 +674,7 @@ color: #FDFBF4;
 #hero-anthro{
     position: relative;
     min-height: 100%;
-    background: #FDFBF4 url("../../assets/img/anthro.gif") bottom left no-repeat;
+    background: #FDFBF4 url("../../assets/img/anthro-hero.png") bottom left no-repeat;
     background-size: contain;
     display: flex;
     align-items: center;
@@ -605,24 +690,28 @@ color: #FDFBF4;
 #hero-anthro h2{
     color:#FBB209;
 }
-#hero-anthro li div{
-    margin-right: 8px;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    color:  #FDFBF4; 
-    border-radius: 13px;
-    background-color: #FBB209;
-    text-align: center;
-}
 #hero-anthro li{
-    padding-bottom: 0.5em;
+    font-size: 20px;
 }
-#hero-anthro ol{
-    padding-left: 0;
+#hero-anthro li:before {
+    content: '';      /*\2022 Unicode for • character */
+    left: -0.8em;
+    top: 7px;
+    width: 25px;
+    height: 21px;
+    position: absolute;
+    background-image: url('../../assets/img/bullet-paws.png');
+    background-size: cover;
+    background-position: center;    
+} 
+#hero-anthro ul{
+    position: relative;
+    padding-left: 20px;
 }
 #hero-anthro img{
     width: 100%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
     border-radius: 50%;
     border: 15px solid #FBB209;
 }
@@ -643,6 +732,8 @@ color: #FDFBF4;
 #hero-anthro .c2,
 #hero-anthro .c3,
 #hero-anthro .c4{
+    -webkit-border-radius:50%; 
+    -moz-border-radius:50%; 
     border-radius: 50%;    
     z-index: -1;
     position: absolute;
@@ -673,8 +764,20 @@ color: #FDFBF4;
     right: 3%;
     bottom: -10%;
 }
-
+#hero-anthro blockquote{
+    font-size: 1.3em;
+    color:#FBB209;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+.q-con{
+    width: 100%;
+}
 /* ABOUT ME */
+#aboutme{
+    margin-bottom: 1em;
+}
 .ex-books {
     display: flex;
     flex-direction: column;
@@ -685,6 +788,8 @@ color: #FDFBF4;
 .ex-books img{
     width: 200px;
     height: 200px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
     border-radius: 50%;
     margin-bottom: 1em;
     opacity: 0.33;
@@ -713,6 +818,8 @@ opacity: 0;
 }
 .img-mid img{
     width: 80%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
     border-radius: 50%;
     border: 15px solid #FBB209;
     z-index: 10;
@@ -721,13 +828,15 @@ opacity: 0;
     width: 135px;
     height: 135px;
     right: 5%;
-    bottom: -10%;
+    bottom: -50px;
 }
 #aboutme .c2{
     width: 54px;
     height: 54px;
     right: 3%;
     bottom: 20%;
+    -webkit-border-radius:50%;  
+    -moz-border-radius:50%;  
     border-radius: 50%;    
     z-index: -1;
     position: absolute;
@@ -740,12 +849,16 @@ opacity: 0;
 }
 .img-book img{
     width: 100%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
     border-radius: 50%;
     margin-bottom: 1em;
     z-index: 10;
 }
 .img-gal img{
     width: 100%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
     border-radius: 50%;
     border: 15px solid #FBB209;
     z-index: 10;
@@ -779,6 +892,43 @@ opacity: 0;
     align-items: center;
     text-align: center;
 }
+/*  SCROLL TO TOP BUTTON */
+#scroll {
+    position:fixed;
+    padding-left: 16px;
+    padding-top: 12px;
+    right:0;
+    bottom:0;
+    cursor:pointer;
+    width:170px;
+    height:50px;
+    border: 1px solid #FBB209;
+    background-color:transparent;
+    display:none;
+    background-color: #fff;
+}
+.fixedbottom{
+    bottom: 117px !important;
+}
+#scroll:focus li,
+#scroll:hover li {
+    text-indent: 0px;
+    margin-top: 0px;
+}
+#scroll li{
+    color:#FBB209;
+}
+#scroll li:after {
+    content: '';      /*\2022 Unicode for • character */
+    top: 15px ;
+    right: 11px;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    background-image: url('../../assets/img/bullet-paws.png');
+    background-size: cover;
+    background-position: center;    
+} 
 /* Media Query */
 @media only screen and (min-width: 1800px) {
     #hero-anthro,
@@ -786,11 +936,14 @@ opacity: 0;
     #hero{
         background-position: 20%;
     }
+    #hero-contact{
+        background-position: 20%;
+    }
     #contact-form .container{
         max-width: 1800px;
     }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1340px){
     #hero-anthro:before,
     #hero-contact:before,
     #hero:before {
@@ -800,13 +953,28 @@ opacity: 0;
         left:0;
         width:100%;
         height:100%;
-        background: rgba(256,256,256,.45);
+        background: rgba(256,256,256,.65);
       }
+}@media only screen and (min-width: 1200px) {
+    .float-right-main{
+        float: right;
+    }
+
+}
+@media only screen and (max-width: 1200px) {
       .book-cover{
           flex-direction: row;
           justify-content: center;
           align-items: center;
 
+      }
+      .book-cover .row{
+          flex-direction: column;
+          margin-left: 2em;
+      }
+      .b-pic{
+          width: 350px;
+          height: 350px;;
       }
       .reverse{
           flex-direction: column-reverse;
@@ -840,15 +1008,12 @@ opacity: 0;
     }
     #s-blog .container{
         padding: 10px;
-    }
-
 }
 @media only screen and (max-width: 550px){
-    #hero-contact button.btn.btn-primary.mb-2 {
-        width: 30%;
+    .container{
+        padding: 15px;
     }
 }
-
 @media screen and (min-width:768px) and (max-width: 990px){
     .side-list{
         margin-left: 5em;
